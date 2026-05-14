@@ -2,8 +2,6 @@
 
 A modern, responsive, and dynamic personal portfolio website built with Python (Flask) and SQLite. Designed with a sleek dark theme, purple accents, and smooth scroll animations.
 
-![Portfolio Preview](static/images/WhatsApp%20Image%202026-05-14%20at%202.05.24%20PM.jpeg)
-
 ## 🚀 Features
 
 *   **Dynamic Projects Database:** A custom SQLite database backend that renders projects dynamically on the homepage.
