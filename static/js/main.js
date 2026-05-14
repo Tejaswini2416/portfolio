@@ -113,10 +113,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fadeElements.forEach(el => fadeObserver.observe(el));
 
-    /* --- Contact Form Success Toast --- */
+    /* --- Contact Form Submission (Web3Forms) --- */
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+    const btnText = submitBtn ? submitBtn.querySelector('span') : null;
+    const btnIcon = submitBtn ? submitBtn.querySelector('i') : null;
     const toast = document.getElementById('toast');
     const toastMessage = toast ? toast.querySelector('.toast-message') : null;
     const toastClose = toast ? toast.querySelector('.toast-close') : null;
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const originalText = btnText.textContent;
+            const originalIcon = btnIcon.className;
+            
+            btnText.textContent = 'Sending...';
+            btnIcon.className = 'fas fa-spinner fa-spin';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+                
+                const result = await response.json();
+                
+                if (response.status === 200) {
+                    showToast('Message sent successfully!', 'success');
+                    contactForm.reset();
+                } else {
+                    showToast(result.message || 'Failed to send message.', 'error');
+                }
+            } catch (error) {
+                console.error(error);
+                showToast('Something went wrong!', 'error');
+            } finally {
+                btnText.textContent = originalText;
+                btnIcon.className = originalIcon;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 
     function showToast(message, type = 'success') {
         if (!toast) return;
@@ -136,13 +184,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (toastClose) {
         toastClose.addEventListener('click', hideToast);
-    }
-
-    // Check if URL has ?success=true from FormSubmit.co
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-        showToast('Message sent successfully!', 'success');
-        // Clean up URL without reloading
-        window.history.replaceState({}, document.title, window.location.pathname);
     }
 });

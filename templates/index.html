@@ -259,11 +259,9 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form action="https://formsubmit.co/tejaswinikummari17@gmail.com" method="POST" class="contact-form">
-                        <!-- Disable Captcha so it's seamless -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <!-- Redirect back to portfolio after sending -->
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5000/?success=true">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="contact-form">
+                        <!-- Put your Web3Forms access key here! -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                         
                         <div class="form-group">
                             <label for="name">Name</label>
