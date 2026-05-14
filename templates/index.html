@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Tejaswini Kummari, a Data Science Engineer and CS Undergrad.">
+    <title>Tejaswini Kummari | Data Science Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TK<span>.</span></a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+                <a href="{{ url_for('static', filename='docs/TejaswiniKummari_Resume.pdf') }}" class="btn-resume"
+                    target="_blank"><i class="fas fa-download"></i> Resume</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Hi, I'm <span class="highlight">Tejaswini Kummari</span></h1>
+                <h2 class="fade-in-up delay-1">I am a <span id="typed-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-desc fade-in-up delay-2">I love turning raw data into meaningful insights.</p>
+                <div class="hero-cta fade-in-up delay-3">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image-container fade-in-up delay-2">
+                <div class="hero-image-glow"></div>
+                <img src="{{ url_for('static', filename='images/WhatsApp Image 2026-05-14 at 2.05.24 PM.jpeg') }}"
+                    alt="Tejaswini Kummari" class="hero-profile-img">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about section">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>I am a 4th-year (2023–2027 batch) B.Tech Computer Science (Data Science) student at Vignana
+                        Bharathi Institute of Technology, Hyderabad.</p>
+                    <p>I am deeply passionate about machine learning, data-driven applications, and building scalable
+                        software that solves real-world problems. With a CGPA of 8.78, I have built a strong foundation
+                        in both academics and practical implementation.</p>
+                    <p>My specific interests lie in the intersection of advanced computing and intelligent algorithms,
+                        particularly in quantum AI and Natural Language Processing (NLP). I believe in continuous
+                        learning and applying analytical skills to drive innovation.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>8.78</h3>
+                        <p>CGPA</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>AI & ML</h3>
+                        <p>Core Focus</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Python</h3>
+                        <p>Primary Stack</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <h2 class="section-title fade-in">Technical Skills</h2>
+            <div class="skills-bars-container">
+                <div class="skill-bar-item fade-in">
+                    <div class="skill-info">
+                        <span><i class="fab fa-python" style="color:var(--accent-primary); margin-right:8px;"></i> Python</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in delay-1">
+                    <div class="skill-info">
+                        <span><i class="fas fa-brain" style="color:var(--accent-primary); margin-right:8px;"></i> Machine Learning</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in delay-2">
+                    <div class="skill-info">
+                        <span><i class="fas fa-chart-bar" style="color:var(--accent-primary); margin-right:8px;"></i> Data Analysis (Pandas, NumPy)</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in delay-3">
+                    <div class="skill-info">
+                        <span><i class="fas fa-database" style="color:var(--accent-primary); margin-right:8px;"></i> SQL & Databases</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in">
+                    <div class="skill-info">
+                        <span><i class="fas fa-code" style="color:var(--accent-primary); margin-right:8px;"></i> C++</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in delay-1">
+                    <div class="skill-info">
+                        <span><i class="fas fa-server" style="color:var(--accent-primary); margin-right:8px;"></i> Web Development (Flask, HTML/CSS, PostgreSQL)</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar-item fade-in delay-2">
+                    <div class="skill-info">
+                        <span><i class="fas fa-tools" style="color:var(--accent-primary); margin-right:8px;"></i> Tools (Git, Jupyter, DSA, OOP)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress-bg">
+                        <div class="skill-progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            
+            {% if is_admin %}
+            <div class="fade-in" style="text-align: center; margin-bottom: 2rem;">
+                <a href="/admin" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Project</a>
+            </div>
+            {% endif %}
+
+            <div class="projects-grid">
+                {% for project in projects %}
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                        <div class="project-tags">
+                            {% for tag in project.tags.split(',') %}
+                            <span class="tag">{{ tag.strip() }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="project-links">
+                            <a href="{{ project.code_link }}" class="btn-github" target="_blank"><i
+                                    class="fab fa-github"></i> Code</a>
+                            <a href="{{ project.demo_link }}" class="btn-github" target="_blank"
+                                style="margin-left: 10px;"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section class="timeline-section section">
+            <div class="timeline-container">
+                <!-- Experience -->
+                <div class="timeline-column fade-in" id="experience">
+                    <h2 class="section-title align-left">Experience</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">May 2025</span>
+                            <h3>Data Science Intern</h3>
+                            <h4 class="company">InternStudio (Remote)</h4>
+                            <p>Forecasting on 10,000+ COVID-19 records. Achieved a 15% improvement in model accuracy via
+                                hyperparameter tuning and 5-fold cross-validation. Utilized Git-based workflows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="timeline-column fade-in delay-1" id="education">
+                    <h2 class="section-title align-left">Education</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - 2027</span>
+                            <h3>B.Tech CSE (Data Science)</h3>
+                            <h4 class="company">Vignana Bharathi Institute of Technology</h4>
+                            <p>Current CGPA: 8.78/10. Focused on core computer science fundamentals, data structures,
+                                and advanced machine learning concepts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-container fade-in">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Whether you have a question about my work, want to collaborate on a project, or just want to say
+                        hi, I'll try my best to get back to you!</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hyderabad, India</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:tejaswinikummari17@gmail.com"
+                                style="color: var(--text-secondary); text-decoration: none; transition: var(--transition);"
+                                onmouseover="this.style.color='var(--accent-primary)'"
+                                onmouseout="this.style.color='var(--text-secondary)'">tejaswinikummari17@gmail.com</a>
+                        </div>
+                        <div class="contact-detail-item social-links">
+                            <a href="https://www.linkedin.com/in/tejaswini-kummari-192425313/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Tejaswini2416" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form action="https://formsubmit.co/tejaswinikummari17@gmail.com" method="POST" class="contact-form">
+                        <!-- Disable Captcha so it's seamless -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Redirect back to portfolio after sending -->
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5000/?success=true">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Tejaswini Kummari. Built with <i class="fas fa-heart"></i> and Flask.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-message">Message sent successfully!</div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
